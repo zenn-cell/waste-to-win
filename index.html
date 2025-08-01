@@ -1,24 +1,315 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>waste-to-win</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trash2Cash - Smart Waste Management</title>
+    <meta name="description" content="Join the revolution in smart waste management. We collect, process, and reward you for your contribution to a cleaner planet.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
 
-    <meta property="og:title" content="waste-to-win" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-recycle"></i>
+                <span>Trash2Cash</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#collect">Collect</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Don't dump it <span class="highlight">Earn from it</span></h1>
+                <p>Join the revolution in smart waste management. We collect, process, and reward you for your contribution to a cleaner planet.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('collect')">Start Collecting</button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('services')">Learn More</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-card">
+                    <i class="fas fa-leaf"></i>
+                    <span>100% Eco-Friendly</span>
+                </div>
+                <div class="floating-card card-2">
+                    <i class="fas fa-coins"></i>
+                    <span>Earn Rewards</span>
+                </div>
+                <div class="floating-card card-3">
+                    <i class="fas fa-recycle"></i>
+                    <span>Smart Recycling</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>How We Process Your Waste</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon metal">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <h3>Metal Waste</h3>
+                    <p>Collected metals are sorted, cleaned, and sent to recycling facilities to create new products, reducing mining needs.</p>
+                    <ul class="service-features">
+                        <li>Aluminum cans recycling</li>
+                        <li>Steel processing</li>
+                        <li>Copper wire recovery</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon decaying">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Decaying Waste</h3>
+                    <p>Organic waste is composted into nutrient-rich manure, supporting sustainable agriculture and reducing landfill burden.</p>
+                    <ul class="service-features">
+                        <li>Composting process</li>
+                        <li>Organic fertilizer production</li>
+                        <li>Soil enrichment</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon non-decaying">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>Non-Decaying Waste</h3>
+                    <p>Plastics and other materials are processed through advanced recycling technologies or converted into useful products.</p>
+                    <ul class="service-features">
+                        <li>Plastic recycling</li>
+                        <li>Material recovery</li>
+                        <li>Product manufacturing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collection Section -->
+    <section id="collect" class="collect">
+        <div class="container">
+            <h2>Submit Your Waste</h2>
+            <div class="collect-container">
+                <div class="collect-form">
+                    <h3>Submit New Waste</h3>
+                    <form id="wasteSubmissionForm">
+                        <div class="form-group">
+                            <label for="submissionDate">Date</label>
+                            <input type="date" id="submissionDate" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="wasteType">Waste Type</label>
+                            <select id="wasteType" required>
+                                <option value="">Select waste type</option>
+                                <option value="metal">Metal Waste</option>
+                                <option value="decaying">Decaying Waste</option>
+                                <option value="non-decaying">Non-Decaying Waste</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="weight">Weight (kg)</label>
+                            <input type="number" id="weight" step="0.1" min="0" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notes">Notes (Optional)</label>
+                            <textarea id="notes" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit Waste</button>
+                    </form>
+                </div>
+                
+                <div class="pricing-info">
+                    <h3>Our Pricing</h3>
+                    <div class="pricing-card">
+                        <div class="price-item">
+                            <i class="fas fa-cog"></i>
+                            <span>Metal Waste</span>
+                            <strong>₹50/kg</strong>
+                        </div>
+                        <div class="price-item">
+                            <i class="fas fa-seedling"></i>
+                            <span>Decaying Waste</span>
+                            <strong>₹10/kg</strong>
+                        </div>
+                        <div class="price-item">
+                            <i class="fas fa-cube"></i>
+                            <span>Non-Decaying Waste</span>
+                            <strong>₹20/kg</strong>
+                        </div>
+                    </div>
+                    <div class="benefits">
+                        <h4>Benefits</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Instant payment</li>
+                            <li><i class="fas fa-check"></i> Free pickup service</li>
+                            <li><i class="fas fa-check"></i> Environmental impact tracking</li>
+                            <li><i class="fas fa-check"></i> Loyalty rewards program</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dashboard Section -->
+    <section id="dashboard" class="dashboard">
+        <div class="container">
+            <h2>Your Submission History</h2>
+            <div class="dashboard-controls">
+                <input type="text" id="searchHistory" placeholder="Search submissions...">
+                <button onclick="clearDashboard()" class="btn btn-secondary">Clear All</button>
+            </div>
+            <div class="history-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Type</th>
+                            <th>Weight (kg)</th>
+                            <th>Earnings</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyTableBody">
+                        <tr>
+                            <td>2023-06-15</td>
+                            <td>Metal</td>
+                            <td>2.5</td>
+                            <td>₹125</td>
+                            <td><span class="status completed">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>2023-06-10</td>
+                            <td>Decaying</td>
+                            <td>3.2</td>
+                            <td>₹32</td>
+                            <td><span class="status completed">Completed</span></td>
+                        </tr>
+                        <tr>
+                            <td>2023-06-05</td>
+                            <td>Non-Decaying</td>
+                            <td>1.8</td>
+                            <td>₹36</td>
+                            <td><span class="status pending">Pending</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-stats">
+                        <div class="stat-item">
+                            <h3>1000+</h3>
+                            <p>Houses Served</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>50T+</h3>
+                            <p>Waste Processed</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>95%</h3>
+                            <p>Recycling Rate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-recycle"></i>
+                        <span>Trash2Cash</span>
+                    </div>
+                    <p>Transforming waste management for a sustainable future.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#collect">Collect</a></li>
+                        <li><a href="#dashboard">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Trash2Cash. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
